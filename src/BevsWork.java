@@ -7,7 +7,6 @@ public class BevsWork {
 
         System.out.println(sleepIn(true, false));
 
-        System.out.println(monkeyTrouble(false, true));
 
         Scanner input = new Scanner(System.in);
         System.out.println("enter a number");
@@ -15,6 +14,9 @@ public class BevsWork {
         System.out.println(diff21(numInput));
 
 
+        System.out.println("enter another number");
+        int numInput2 = input.nextInt();
+        System.out.println(sumDouble(numInput, numInput2));
 
     }
 
@@ -37,7 +39,7 @@ public class BevsWork {
 
 //2---------------------------------------------------------------------------------------------------------------------
 
-//    Given an int n, return the absolute difference between n and 21, except return double the absolute difference if n is over 21.
+    //    Given an int n, return the absolute difference between n and 21
 //a number minus 21 using user input
 //
 //    diff21(19) → 2
@@ -45,29 +47,23 @@ public class BevsWork {
 //    diff21(21) → 0
     public static int diff21(int numInput) {
         System.out.println("your number minus 21 is : ");
-            return ( + numInput - 21);
-        }
+        return (+numInput - 21);
+    }
 
 //3---------------------------------------------------------------------------------------------------------------------
 
 
-//    We have two monkeys, a and b, and the parameters aSmile and bSmile indicate if each is smiling. We are in trouble if they are both smiling or if neither of them is smiling. Return true if we are in trouble.
-//
-//
-//    monkeyTrouble(true, true) → true
-//    monkeyTrouble(false, false) → true
-//    monkeyTrouble(true, false) → false
-    public static boolean monkeyTrouble(boolean aSmile, boolean bSmile) {
-        if (aSmile && bSmile) {
-            return true;
+
+
+    public static int sumDouble(int numInput, int numInput2) {
+        // Store the sum in a local variable
+        int sum = numInput + numInput2;
+
+        // Double it if a and b are the same
+        if (numInput == numInput2) {
+            sum = sum * 2;
         }
-        if (!aSmile && !bSmile) {
-            return true;
-        }
-        return false;
 
-
-
+        return sum;
     }
-
 }
