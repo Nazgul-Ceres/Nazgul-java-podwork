@@ -6,19 +6,15 @@ public class BevsWork {
 //        https://codingbat.com/java/Warmup-1
 
         System.out.println(sleepIn(true, false));
-        System.out.println(diff21(2));
-        System.out.println(monkeyTrouble(true, true));
+
+        System.out.println(monkeyTrouble(false, true));
+
+        Scanner input = new Scanner(System.in);
+        System.out.println("enter a number");
+        int numInput = input.nextInt();
+        System.out.println(diff21(numInput));
 
 
-//        ----BONUS 1
-//        Create date format converter application.
-//                Take in the following format:
-//        MM/DD/YYYY
-//        Output the following:
-//        MonthName DD, YYYY
-//        Example:
-//        input - 12/01/1999
-//        output - December 12, 1999
 
     }
 
@@ -42,18 +38,16 @@ public class BevsWork {
 //2---------------------------------------------------------------------------------------------------------------------
 
 //    Given an int n, return the absolute difference between n and 21, except return double the absolute difference if n is over 21.
-//
+//a number minus 21 using user input
 //
 //    diff21(19) → 2
 //    diff21(10) → 11
 //    diff21(21) → 0
-    public static int diff21(int n) {
-        if (n <= 21) {
-            return 21 - n;
-        } else {
-            return (n - 21) * 2;
+    public static int diff21(int numInput) {
+        System.out.println("your number minus 21 is : ");
+            return ( + numInput - 21);
         }
-    }
+
 //3---------------------------------------------------------------------------------------------------------------------
 
 
@@ -64,7 +58,16 @@ public class BevsWork {
 //    monkeyTrouble(false, false) → true
 //    monkeyTrouble(true, false) → false
     public static boolean monkeyTrouble(boolean aSmile, boolean bSmile) {
-           return (aSmile == bSmile);
+        if (aSmile && bSmile) {
+            return true;
+        }
+        if (!aSmile && !bSmile) {
+            return true;
+        }
+        return false;
+
+
+
     }
 
 }
