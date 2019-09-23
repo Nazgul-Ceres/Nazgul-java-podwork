@@ -6,19 +6,17 @@ public class BevsWork {
 //        https://codingbat.com/java/Warmup-1
 
         System.out.println(sleepIn(true, false));
-        System.out.println(diff21(2));
-        System.out.println(monkeyTrouble(true, true));
 
 
-//        ----BONUS 1
-//        Create date format converter application.
-//                Take in the following format:
-//        MM/DD/YYYY
-//        Output the following:
-//        MonthName DD, YYYY
-//        Example:
-//        input - 12/01/1999
-//        output - December 12, 1999
+        Scanner input = new Scanner(System.in);
+        System.out.println("enter a number");
+        int numInput = input.nextInt();
+        System.out.println(diff21(numInput));
+
+
+        System.out.println("enter another number");
+        int numInput2 = input.nextInt();
+        System.out.println(sumDouble(numInput, numInput2));
 
     }
 
@@ -41,30 +39,31 @@ public class BevsWork {
 
 //2---------------------------------------------------------------------------------------------------------------------
 
-//    Given an int n, return the absolute difference between n and 21, except return double the absolute difference if n is over 21.
-//
+    //    Given an int n, return the absolute difference between n and 21
+//a number minus 21 using user input
 //
 //    diff21(19) → 2
 //    diff21(10) → 11
 //    diff21(21) → 0
-    public static int diff21(int n) {
-        if (n <= 21) {
-            return 21 - n;
-        } else {
-            return (n - 21) * 2;
-        }
+    public static int diff21(int numInput) {
+        System.out.println("your number minus 21 is : ");
+        return (+numInput - 21);
     }
+
 //3---------------------------------------------------------------------------------------------------------------------
 
 
-//    We have two monkeys, a and b, and the parameters aSmile and bSmile indicate if each is smiling. We are in trouble if they are both smiling or if neither of them is smiling. Return true if we are in trouble.
-//
-//
-//    monkeyTrouble(true, true) → true
-//    monkeyTrouble(false, false) → true
-//    monkeyTrouble(true, false) → false
-    public static boolean monkeyTrouble(boolean aSmile, boolean bSmile) {
-           return (aSmile == bSmile);
-    }
 
+
+    public static int sumDouble(int numInput, int numInput2) {
+        // Store the sum in a local variable
+        int sum = numInput + numInput2;
+
+        // Double it if a and b are the same
+        if (numInput == numInput2) {
+            sum = sum * 2;
+        }
+
+        return sum;
+    }
 }
