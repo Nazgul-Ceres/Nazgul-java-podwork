@@ -1,67 +1,46 @@
 import java.util.Scanner;
 
 public class BevsWork {
-        static int[] nums = {1,2,3,4,5,6};
-        static int[] a = {1,2,3,4,5,6};
-        static int[] b = {1,2,3,4,5,6};
-        static int[] c = {5,5,3};
+
+
+
 
     public static void main(String[] args) {
 
-//        https://codingbat.com/java/Warmup-1
+//        https://codingbat.com
 
 
-        System.out.println(firstLast6(nums));
-        System.out.println(commonEnd(a,b));
-        System.out.println(sum(c));
+        System.out.println(nearHundred(10));
+        System.out.println(parrotTrouble(true, 9));
+        System.out.println(makes10(12,4));
 
 
     }
 
 //1---------------------------------------------------------------------------------------------------------------------
 
-//    Given an array of ints, return true if 6 appears as either the first or last element in the array. The array will be length 1 or more.
 
+//    Given an int n, return true if it is within 10 of 100 or 200. Note: Math.abs(num) computes the absolute value of a number.
 
-    public static boolean firstLast6(int[] nums) {
-        if(nums[0]== 6 || nums[nums.length -1] == 6) {
-            return true;
-        } else {
-            return false;
-        }
-
+    public static boolean nearHundred(int n) {
+        return ((Math.abs(100 - n) <= 10) ||
+                (Math.abs(200 - n) <= 10));
     }
 
 //2---------------------------------------------------------------------------------------------------------------------
 //
-//    Given 2 arrays of ints, a and b, return true if they have the same first element or they have the same last element. Both arrays will be length 1 or more.
+//We have a loud talking parrot. The "hour" parameter is the current hour time in the range 0..23. We are in trouble if the parrot is talking and the hour is before 7 or after 20. Return true if we are in trouble.
 //
-//
-//    commonEnd([1, 2, 3], [7, 3]) → true
-//    commonEnd([1, 2, 3], [7, 3, 2]) → false
-//    commonEnd([1, 2, 3], [1, 3]) → true
-
-    public static boolean commonEnd(int[] a, int[] b) {
-
-        if (a [a.length -1] == b[b.length -1]) {
-            return true;
-        } else if (a[0] == b[0]) {
-            return true;
-        }else {
-            return false;
-        }
-    }
+public static boolean parrotTrouble(boolean talking, int hour) {
+    return (talking && (hour < 7 || hour > 20));
+}
 
 //3---------------------------------------------------------------------------------------------------------------------
 
-//    Return the sum of the numbers in the array, returning 0 for an empty array.
 
-    public static int sum(int[] nums) {
-        int sum = 0;
-        for (int value : nums) {
-            sum += value;
-        }
-        return sum;
+//    Given 2 ints, a and b, return true if one if them is 10 or if their sum is 10.
+    public static boolean makes10(int a, int b) {
+        return (a == 10 || b == 10 || a+b == 10);
     }
 
 
