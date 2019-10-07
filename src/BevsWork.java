@@ -44,4 +44,24 @@ public static boolean parrotTrouble(boolean talking, int hour) {
     }
 
 
+//In class bonus
+//    public int getBinary() {
+//
+//        try{
+//            return Integer.valueOf(getString("Enter a binary number: "), 2);
+//        }catch(NumberFormatException e){
+//            e.printStackTrace();
+//            System.out.print("Your number is: ");
+//        }
+//        return getBinary();
+//    }
+//    public int getHex() {
+//        try {
+//            return Integer.valueOf(getString("Enter a hexadecimal number: "), 16);
+//        }catch(NumberFormatException e){
+//            System.out.print("Your number is: ");
+//        }
+//        return getHex();
+//
+//    }
 }
